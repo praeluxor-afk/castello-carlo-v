@@ -1,0 +1,301 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #8B3A0F;
+  --color-primary-light: #B5511A;
+  --color-gold: #C4A265;
+  --color-gold-light: #D4BC8A;
+  --color-dark: #0A0806;
+  --color-dark-2: #111009;
+  --color-surface: #1A1510;
+  --color-surface-2: #221C15;
+  --color-text: #F5F0E8;
+  --color-text-muted: #A89880;
+  --color-border: rgba(196, 162, 101, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  font-family: var(--font-garamond), Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar personalizzata */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-light);
+}
+
+/* Selezione testo */
+::selection {
+  background: rgba(196, 162, 101, 0.3);
+  color: var(--color-text);
+}
+
+/* Texture noise come sfondo sottile */
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Separatore ornamentale oro */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  width: fit-content;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold));
+}
+
+.ornament-divider::after {
+  background: linear-gradient(to left, transparent, var(--color-gold));
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Focus visibile accessibile */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Sezione hero - gradient per la linea verso il basso */
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 8, 6, 0.2) 0%,
+    rgba(10, 8, 6, 0.5) 50%,
+    rgba(10, 8, 6, 0.92) 100%
+  );
+}
+
+/* Sezione title ornament */
+.section-title {
+  font-family: var(--font-cinzel), serif;
+  color: var(--color-gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Stile link navbar */
+.nav-link {
+  position: relative;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.35s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Card stile museo */
+.museum-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.museum-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 8px 32px rgba(196, 162, 101, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Bottone stile gold */
+.btn-gold {
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2.5rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-gold:hover {
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+.btn-gold-filled {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2.5rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.btn-gold-filled:hover {
+  background: var(--color-gold-light);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 4, 3, 0.96);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timeline line */
+.timeline-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 2s ease;
+}
+
+.timeline-line.drawn {
+  stroke-dashoffset: 0;
+}
+
+/* Ornamental border */
+.gold-frame {
+  border: 1px solid var(--color-gold);
+  position: relative;
+}
+
+.gold-frame::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(196, 162, 101, 0.3);
+  pointer-events: none;
+}
+
+/* Partner logos — always full color */
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scroll indicator */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.scroll-indicator {
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+/* Smooth image hover */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.6s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Cookie banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 8000;
+  background: var(--color-surface-2);
+  border-top: 1px solid var(--color-gold);
+}
+
+/* Masonry grid */
+@supports (grid-template-rows: masonry) {
+  .masonry-grid {
+    grid-template-rows: masonry;
+  }
+}
