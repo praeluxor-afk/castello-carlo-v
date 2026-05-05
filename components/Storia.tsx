@@ -164,7 +164,7 @@ export default function Storia() {
         {/* Story blocks */}
         <StoryBlock
           image="/images/torre-comandante.webp"
-          alt="Torre Comandante del Castello di Carlo V Crotone"
+          alt="Torre Comandante del Castello Carlo V di Crotone - XV secolo"
           caption="Torre Comandante — XV Secolo"
           text="Il Castello di Carlo V di Crotone è un'antica fortezza che attira turisti da tutto il mondo. Costruito nel IX secolo dai Bizantini per proteggere la città dagli attacchi dei Saraceni, il castello ha subito diverse modifiche nel corso dei secoli, riflettendo le influenze di diverse dominazioni."
           delay={0.1}
@@ -172,7 +172,7 @@ export default function Storia() {
 
         <StoryBlock
           image="/images/ponte-di-pietra-scaled.webp"
-          alt="Ponte di pietra del Castello di Carlo V Crotone"
+          alt="Ponte di pietra di accesso al Castello Carlo V Crotone"
           caption="Ponte di Pietra — Accesso Storico"
           text="La struttura originaria, conosciuta come Kastron Bizantino, si estendeva dalla posizione attuale del Museo Archeologico Nazionale fino all'attuale Castello. È situato sull'acropoli dell'antica città greca di Kroton, come testimoniato da un muro perimetrale ancora presente nel castello."
           reverse
@@ -181,7 +181,7 @@ export default function Storia() {
 
         <StoryBlock
           image="/images/cortina.webp"
-          alt="Cortina muraria del Castello di Carlo V Crotone"
+          alt="Cortine murarie del Castello Carlo V Crotone - XVI secolo"
           caption="Cortine e Bastioni — XVI Secolo"
           text="Nel XVI secolo, durante il periodo dell'imperatore Carlo V, Crotone fu inserita in un grande progetto di fortificazione costiera. L'architetto militare Gian Giacomo dell'Acaia progettò le possenti mura e i bastioni che ancora oggi caratterizzano la silhouette del castello sul promontorio crotonese."
           delay={0.1}

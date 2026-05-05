@@ -96,6 +96,9 @@ export default function Hero() {
         }}
       />
 
+      {/* SEO h1 — visually hidden */}
+      <h1 className="sr-only">Castello di Carlo V Crotone — Visita, Tour Guidati e Storia</h1>
+
       {/* Content */}
       <motion.div
         variants={containerVariants}

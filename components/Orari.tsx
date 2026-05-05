@@ -251,6 +251,11 @@ export default function Orari() {
             </div>
           </motion.div>
         </div>
+
+        <p style={{ fontFamily: 'var(--font-garamond)', fontStyle: 'italic', fontSize: '0.9rem', color: 'var(--color-text-muted)', textAlign: 'center', marginTop: '2rem' }}>
+          Il Castello di Carlo V si trova a Crotone, in Calabria.
+          Per prenotare un tour guidato contattaci al +39 349 666 1564.
+        </p>
       </div>
     </section>
   );

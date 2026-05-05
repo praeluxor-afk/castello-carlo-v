@@ -8,7 +8,7 @@ const elements = [
   {
     title: 'Torre Comandante',
     image: '/images/torre-comandante.webp',
-    alt: 'Torre Comandante del Castello di Carlo V Crotone',
+    alt: 'Torre Comandante del Castello Carlo V di Crotone - XV secolo',
     text: "La Torre Comandante è una delle torri aragonesi del XV secolo. Imponente struttura cilindrica che domina la città e il porto di Crotone, con una vista panoramica sul Mar Ionio.",
   },
   {
@@ -20,7 +20,7 @@ const elements = [
   {
     title: 'Ponte di Pietra',
     image: '/images/ponte-di-pietra-scaled.webp',
-    alt: 'Ponte di pietra del Castello di Carlo V Crotone',
+    alt: 'Ponte di pietra di accesso al Castello Carlo V Crotone',
     text: "Il suggestivo ponte di pietra è l'accesso principale al castello. Attraversandolo si percepisce immediatamente la stratificazione storica del luogo, con viste panoramiche sul fossato e sui giardini sottostanti.",
   },
   {
