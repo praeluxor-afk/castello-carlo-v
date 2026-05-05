@@ -23,6 +23,7 @@ const itemVariants = {
 export default function Hero() {
   const [scrolled, setScrolled] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [posterReady, setPosterReady] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 100);
@@ -47,7 +48,7 @@ export default function Hero() {
         justifyContent: 'center',
       }}
     >
-      {/* Solid black placeholder — shown until video is ready */}
+      {/* Black placeholder — hidden as soon as poster or video is ready */}
       <div
         style={{
           position: 'absolute',
@@ -57,13 +58,13 @@ export default function Hero() {
           height: '100%',
           backgroundColor: '#0A0806',
           zIndex: 0,
-          opacity: videoReady ? 0 : 1,
-          transition: 'opacity 0.5s ease',
+          opacity: posterReady || videoReady ? 0 : 1,
+          transition: 'opacity 0.3s ease',
           pointerEvents: 'none',
         }}
       />
 
-      {/* Background video */}
+      {/* Background video — poster visible while video buffers */}
       <video
         autoPlay
         muted
@@ -71,6 +72,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         poster="/images/castle-poster.jpg"
+        onLoadStart={() => setPosterReady(true)}
         onCanPlay={() => setVideoReady(true)}
         style={{
           position: 'absolute',
@@ -80,8 +82,8 @@ export default function Hero() {
           height: '100%',
           objectFit: 'cover',
           zIndex: 0,
-          opacity: videoReady ? 1 : 0,
-          transition: 'opacity 0.5s ease',
+          opacity: posterReady || videoReady ? 1 : 0,
+          transition: 'opacity 0.3s ease',
         }}
       >
         <source src="/videos/castleIntro-1.mp4" type="video/mp4" />
