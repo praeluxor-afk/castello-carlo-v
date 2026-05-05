@@ -70,6 +70,7 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
+        poster="/images/castle-poster.jpg"
         onCanPlay={() => setVideoReady(true)}
         style={{
           position: 'absolute',
