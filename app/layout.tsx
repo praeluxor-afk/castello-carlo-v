@@ -85,6 +85,11 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.castellocarlovcrotone.it' },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
